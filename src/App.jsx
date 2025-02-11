@@ -21,6 +21,7 @@ import WishListContextProvider from './Components/Context/WishListContext.jsx'
 import CheackOut from './Components/CheackOut/CheackOut.jsx'
 import AllOrders from './Components/AllOrders/AllOrders.jsx'
 import ProutectedL from './Components/ProutectedL/ProutectedL.jsx'
+import ForgetPassword from './Components/ForgetPassword/ForgetPassword.jsx'
 
 
 
@@ -31,7 +32,7 @@ let routers = createBrowserRouter([{
   path:'' , element : <Layout/>,children:[
     {index: true , element: <ProutectedL><Register/></ProutectedL>},
     {path:'login' , element:<ProutectedL> <Login/></ProutectedL>},
-  
+    {path:'forgetpassword' , element:<ProutectedL> <ForgetPassword/> </ProutectedL>},
     {path:'home' , element: <ProtectedRoute><Home/></ProtectedRoute>},
     {path:'cart' , element:  <ProtectedRoute><Cart/></ProtectedRoute>},
     {path:'wishlist' , element:  <ProtectedRoute><WishList/></ProtectedRoute>},

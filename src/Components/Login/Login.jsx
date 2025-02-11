@@ -3,7 +3,7 @@ import style from "./Login.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../Context/UserContext";
 import { CartContext } from "../Context/CartContext";
 import { wishListContext } from "../Context/WishListContext";
@@ -126,7 +126,7 @@ export default function Login() {
           </div>
         )}
 
-        {loading ? (
+        <div className=" flex justify-between">{loading ? (
           <button
             type="button"
             className="text-white bg-main-700 hover:bg-main-800 focus:ring-4 focus:outline-none focus:ring-main-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 py-1.5 text-center dark:bg-main-600 dark:hover:bg-main-700 dark:focus:ring-main-800"
@@ -141,7 +141,7 @@ export default function Login() {
             Submit
           </button>
         )}
-        <Link to={`/forget  `}></Link>
+        <Link to={`/forgetpassword`} className=" text-l hover:bg-main-800 ">Forget Your Password?</Link></div>
       </form>
     </>
   );
