@@ -11,11 +11,19 @@ export let UserContext =createContext();
 
         const [userToken, setUserToken] = useState(null);
 
-        useEffect(()=>{
-            if (localStorage.getItem('userToken')) {
-                setUserToken(localStorage.getItem('userToken'))
-            }
-        },[])
+      useEffect(() => {
+      localStorage.getItem("userToken") &&
+      setUserToken(localStorage.getItem("userToken"));
+      if(userToken){
+        setUserToken(userToken);    
+       }
+     }, [userToken]);
+
+        // useEffect(()=>{
+        //     if (localStorage.getItem('userToken')) {
+        //         setUserToken(localStorage.getItem('userToken'))
+        //     }
+        // },[])
         return < UserContext.Provider value={ {userToken,setUserToken} }>
             {children}
         </ UserContext.Provider>
