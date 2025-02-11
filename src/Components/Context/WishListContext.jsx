@@ -81,7 +81,7 @@ export default function WishListContextProvider({children}) {
             
         }
     }
- return<wishListContext.Provider value={{addProductToWishList , wishList , deleteProductCountToWishList}}>
+ return<wishListContext.Provider value={{addProductToWishList,getProductToWishList , wishList , deleteProductCountToWishList}}>
   
   {children}
   

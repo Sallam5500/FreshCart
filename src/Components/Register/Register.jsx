@@ -5,11 +5,17 @@ import * as Yup from 'yup'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
+import { CartContext } from '../Context/CartContext';
+import { wishListContext } from '../Context/WishListContext';
 
 
 export default function Register() {
  const [apiError, setApiError] = useState(null)
  const [loading, setLoading] = useState(false)
+
+ const{getProductsCart}=useContext(CartContext);
+
+const{getProductToWishList}=useContext(wishListContext);
 
 let {setUserToken} = useContext(UserContext)
 
@@ -23,7 +29,11 @@ try{
   console.log(data);
   localStorage.setItem('userToken',data.token);
   setUserToken(data.token)
+  
+  await getProductsCart()
+  await getProductToWishList()
 
+  
  navigate('home')
 }catch(err){
    console.log(err.response.data.message);

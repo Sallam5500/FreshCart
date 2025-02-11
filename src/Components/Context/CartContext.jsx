@@ -91,7 +91,7 @@ export default function CartContextProvider({children}) {
 
  },[])
   
-return<CartContext.Provider value={{addProductToCart , cart,updateProductCountToCart,deleteProductCountToCart}}>
+return<CartContext.Provider value={{addProductToCart , getProductsCart,cart,updateProductCountToCart,deleteProductCountToCart}}>
 
 {children}
 
