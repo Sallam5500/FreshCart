@@ -38,8 +38,8 @@ export default function AllOrdersComponent() {
             <ul className="space-y-4">
               {allOrders.map((item, index) => (
                 <li key={index} className="bg-gray-50 p-4 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <img src={item.image} alt="" />
-                  <p className="font-medium text-lg">Order Number :{item._id}</p>
+                  
+                  <p className="font-medium text-lg">Order Number :{item.id}</p>
                   <p className="text-gray-600">Order date: {item.date}</p>
                   <p className="text-gray-600">State: {item.status}</p>
                 </li>

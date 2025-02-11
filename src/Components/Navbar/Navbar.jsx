@@ -8,14 +8,14 @@ export default function Navbar() {
   const { userToken, setUserToken } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // تحديث حالة `userToken` عند تسجيل الخروج
+  
   function logOut() {
     localStorage.removeItem('userToken');
     setUserToken(null);
     navigate('/login');
   }
 
-  // تحديث الحالة عند تغيير `localStorage`
+
   useEffect(() => {
     const handleStorageChange = () => {
       setUserToken(localStorage.getItem('userToken'));
@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <header className="bg-gray-200 fixed inset-x-0 top-0 z-50">
       <nav className="flex items-center justify-between px-6 py-3 lg:px-8">
-        {/* Logo */}
+        
         <Link to={'home'} className="lg:pe-4">
           <img src={logo} width={120} alt="Logo" />
         </Link>
