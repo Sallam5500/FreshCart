@@ -8,6 +8,7 @@ import Categories from './Components/Categories/Categories.jsx'
 import Brands from './Components/Brands/Brands.jsx'
 import Products from './Components/Products/Products.jsx'
 import Login from './Components/Login/Login.jsx'
+
 import Register from './Components/Register/Register.jsx'
 import NotFound from './Components/NotFound/NotFound.jsx'
 import UserContextProvider from './Components/Context/UserContext.jsx'
@@ -25,10 +26,12 @@ import ProutectedL from './Components/ProutectedL/ProutectedL.jsx'
 
 
 
+
 let routers = createBrowserRouter([{
   path:'' , element : <Layout/>,children:[
     {index: true , element: <ProutectedL><Register/></ProutectedL>},
     {path:'login' , element:<ProutectedL> <Login/></ProutectedL>},
+  
     {path:'home' , element: <ProtectedRoute><Home/></ProtectedRoute>},
     {path:'cart' , element:  <ProtectedRoute><Cart/></ProtectedRoute>},
     {path:'wishlist' , element:  <ProtectedRoute><WishList/></ProtectedRoute>},

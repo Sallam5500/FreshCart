@@ -141,6 +141,7 @@ export default function Login() {
             Submit
           </button>
         )}
+        <Link to={`/forget  `}></Link>
       </form>
     </>
   );
