@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function AllOrdersComponent() {
+  const token =localStorage.getItem('userToken');
+  const decoded = jwtDecode(token);
+  console.log(decoded);
+  
   const [allOrders, setAllOrders] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
