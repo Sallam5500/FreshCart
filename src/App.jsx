@@ -47,17 +47,23 @@ function App() {
   return <>
 
         
-  <CartContextProvider>
+  
  <WishListContextProvider>
+
+ <CartContextProvider>
+
  <UserContextProvider>
 
 <RouterProvider router={routers}></RouterProvider>
 <Toaster/>
 
 </UserContextProvider>
+
+</CartContextProvider>
+
  </WishListContextProvider>
 
-  </CartContextProvider>
+
     
 
   </>
