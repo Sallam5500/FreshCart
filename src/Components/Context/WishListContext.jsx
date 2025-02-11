@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 export let wishListContext =createContext();
 
 export default function WishListContextProvider({children}) {
+    
     const getToken = () => localStorage.getItem("userToken");
     const headers={
         token: localStorage.getItem('userToken')

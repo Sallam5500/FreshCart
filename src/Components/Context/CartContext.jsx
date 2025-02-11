@@ -9,6 +9,7 @@ export let CartContext=createContext();
 
 
 export default function CartContextProvider({children}) {
+    const getToken = () => localStorage.getItem("userToken");
   const headers={
     token: localStorage.getItem('userToken')
 }
@@ -86,10 +87,13 @@ export default function CartContextProvider({children}) {
         
     }
  }
- useEffect(()=>{
-    getProductsCart();
-
- },[])
+ useEffect(() => {
+    if (getToken()) {
+      getProductsCart();
+    } else {
+      setCart(null); // Clear cart if no user is logged in
+    }
+  }, [getToken()]);
   
 return<CartContext.Provider value={{addProductToCart , getProductsCart,cart,updateProductCountToCart,deleteProductCountToCart}}>
 
