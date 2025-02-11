@@ -29,12 +29,12 @@ export default function Register() {
       );
       console.log(data);
       localStorage.setItem("userToken", data.token);
-      setUserToken(data.token);
-
+      
       await getProductsCart();
       await getProductToWishList();
-
+      
       navigate("home");
+      setUserToken(data.token);
     } catch (err) {
       console.log(err.response.data.message);
       setApiError(err.response.data.message);

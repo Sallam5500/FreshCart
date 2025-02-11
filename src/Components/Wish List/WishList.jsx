@@ -33,7 +33,7 @@ const{wishList,deleteProductCountToWishList}= useContext(wishListContext)
         </tr>
       </thead>
       <tbody>
-       {wishList.data.map((item , index)=> <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+       {wishList?.data?.map((item , index)=> <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td className="p-4">
             <img src={item.imageCover} className="w-16 md:w-32 max-w-full max-h-full" alt={item.title} />
           </td>
